@@ -1,0 +1,27 @@
+<div class="main-layout">
+    <div class="header">Header
+        <select id="envSelect" #selectControl [(ngModel)]="selectedOption">
+            <option *ngFor="let e of envs" [ngValue]="e">{{e}}</option>
+        </select>
+        <input type="text" value="{{selectControl.value}}"/>
+        <label for="envSelect">{{selectOptionData}}</label>
+    </div>
+    <div class="content">Content
+        <span>{{ selectControl.value }}</span>
+    </div>
+    <div class="subgrid">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div [ngClass]="SpecialClass">this is it</div>
+    </div>
+    <div>
+        <button #clickbutton (click)="eventName = $event.type">CLick me</button>
+        <span>{{eventName}}</span>
+        <span>{{clickbutton.type}}</span>
+    </div>
+</div>
+    
